@@ -1,19 +1,2 @@
-first plan is to get this to workundefinedfirst plan is to get this to workundefinedfirst plan is to get this to workundefinedfirst plan is to get this to work
-first plan is to get this to work
-first plan is to get this to work
-first plan is to get this to work
-
-first plan is to get this to work
-
-first plan is to get this to work
-
-first plan is to get this to work
-
-first plan is to get this to work
-
-first plan is to get this to work
-
-first plan is to get this to work
-
-first plan is to get this to work
+This works as a planner that will read back stuff that was previous written into it!
 

@@ -12,23 +12,20 @@ var liriSearch = process.argv.slice(3).join(" ");
 
 switch (liriProcess) {
     case "concert-this":
-        console.log("concert search");
-    break;
+        console.log("bands in town api was wacky and 404 when trying to look it up");
+        break;
     case "spotify-this-song":
-    songSearch();
-        console.log("spotify this song");
-    break;
+        songSearch();
+        break;
     case "movie-this":
-    movieSearch();
-        console.log("movie this");
-    break;
+        movieSearch();
+        break;
     case "do-what-it-says":
-    plannerSearch();
-        console.log("do what it says");
-    break;
+        plannerSearch();
+        break;
     default:
         console.log("your process request wasn't possible. I'm not THAT smart ya know.");
-    break;
+        break;
 }
 
 
@@ -53,7 +50,7 @@ function songSearch() {
                         "album: " + data[i].album.name + "\n"
                 }
                 console.log(spotifydata);
-            } 
+            }
         });
 }
 
@@ -64,13 +61,15 @@ function movieSearch() {
             if (error) {
                 throw error;
             } else {
-                let data = JSON.parse(body);
+                var dataR = JSON.parse(body);
 
                 var moviedata =
-                    "title: " + data.Title + "\n" +
-                    "year: " + data.Year + "\n" +
-                    "genre: " + data.Genre + "\n" +
-                    "plot: " + data.Plot + "\n"
+                    "title: " + dataR.Title + "\n" +
+                    "year: " + dataR.Year + "\n" +
+                    "genre: " + dataR.Genre + "\n" +
+                    "rating: " + dataR.imdbRating + "\n" +
+                    "actors: " + dataR.Actors + "\n" +
+                    "plot: " + dataR.Plot + "\n" +
                 console.log(moviedata);
             }
         })
@@ -79,11 +78,11 @@ function movieSearch() {
 
 function plannerSearch() {
     var inputdata = liriSearch + "\n\n"
-    fs.appendFile("random.txt", inputdata, function(err) {
+    fs.appendFile("random.txt", inputdata, function (err) {
         if (err) throw err;
-        
+
     })
-    fs.readFile("./random.txt", "utf-8", function(err,data) {
+    fs.readFile("./random.txt", "utf-8", function (err, data) {
         if (err) throw err;
         console.log("stuff inside of planner: ");
         console.log("---------------------------")
